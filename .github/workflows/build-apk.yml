@@ -35,12 +35,12 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Install core dependencies
-        run: npm install --no-audit --no-fund
+        run: npm install --legacy-peer-deps --no-audit --no-fund
 
       - name: Install Expo modules at versions matching this Expo SDK
         run: |
-          npx expo install expo-video expo-document-picker expo-screen-orientation expo-brightness expo-video-thumbnails expo-linear-gradient expo-font @react-native-async-storage/async-storage @expo-google-fonts/manrope
-          npx expo install --fix
+         npx expo install expo-video expo-document-picker expo-screen-orientation expo-brightness expo-video-thumbnails expo-linear-gradient expo-font @react-native-async-storage/async-storage @expo-google-fonts/manrope
+         npx expo install --fix
 
       - name: Generate native Android project
         run: npx expo prebuild --platform android --clean
